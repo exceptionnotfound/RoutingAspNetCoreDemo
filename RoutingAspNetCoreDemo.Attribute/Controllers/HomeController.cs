@@ -27,8 +27,8 @@ namespace RoutingAspNetCoreDemo.Attribute.Controllers
             return View();
         }
 
-        [HttpGet("Home/Privacy")]
-        public IActionResult Privacy()
+        [HttpGet("Home/HttpGet")]
+        public IActionResult HttpGet()
         {
             return View();
         }
@@ -36,7 +36,7 @@ namespace RoutingAspNetCoreDemo.Attribute.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorVM { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

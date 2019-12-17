@@ -3,6 +3,38 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Hello Dear Reader!</h1>
 </div>
+
+<p>This sample project is designed to demonstrate a few ways we can use Attribute Routing in ASP.NET Core 3.0 MVC</p>
+
+<p>
+    The links above demonstrate some of these methods.
+    But before you look at them, take a look at the <strong>Startup.cs</strong> file in this project.
+    In that file, you will see a call to <strong>MapControllers()</strong>; this is the method that enables us
+    to use Attribute Routing.
+</p>
+
+<p>The "Home" link above has three routes: "~/", "", and "/Index", which means that it is the default action for the app and for its controller.</p>
+
+
+<p>
+    The "[HttpGet]" link demonstrates a shortcut way to define routes, by using the [HttpGet] attribute.
+</p>
+
+<p>
+    The "Area" link demonstrates how to use Attribute Routing with Areas.
+    You need to do two things: assign the [Area] attribute to the affected controllers,
+    and separately define the routes used to reach those actions.  [RouteArea] and [RoutePrefix]
+    are no longer used.
+</p>
+
+
+<p>
+    Finally, the "Ambiguous" link demonstrates what happens when two actions have the same route;
+    the system throws an AmbiguousMatchException.
+</p>
+
+<p>
+    Thanks for reading, and Happy Coding!
+</p>

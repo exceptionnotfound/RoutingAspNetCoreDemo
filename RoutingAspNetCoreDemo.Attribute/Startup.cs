@@ -48,7 +48,7 @@ namespace RoutingAspNetCoreDemo.Attribute
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers()
+                endpoints.MapControllers();
             });
         }
     }
