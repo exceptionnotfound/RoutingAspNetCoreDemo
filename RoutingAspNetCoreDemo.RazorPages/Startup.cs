@@ -1,12 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RoutingAspNetCoreDemo.Endpoints.RouteConstraints;
 
-namespace RoutingAspNetCoreDemo.Endpoints
+namespace RoutingAspNetCoreDemo.RazorPages
 {
     public class Startup
     {
@@ -20,7 +23,7 @@ namespace RoutingAspNetCoreDemo.Endpoints
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,10 +35,11 @@ namespace RoutingAspNetCoreDemo.Endpoints
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -45,23 +49,7 @@ namespace RoutingAspNetCoreDemo.Endpoints
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapGet("/test/get", async context => 
-                {
-                    context.Response.Redirect("/user/index");
-                    await context.Response.CompleteAsync();
-                });
-
-                endpoints.MapControllerRoute(
-                    name: "userdetails",
-                    pattern: "user/{id}/{**name}",
-                    defaults: new {controller = "User", action = "Details"},
-                    constraints: new { id = new RequiredIntRouteConstraint(),
-                                       name = new RequiredRouteConstraint() }
-                );
+                endpoints.MapRazorPages();
             });
         }
     }

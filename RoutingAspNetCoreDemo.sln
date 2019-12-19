@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoutingAspNetCoreDemo.Attri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingAspNetCoreDemo.Endpoints", "RoutingAspNetCoreDemo.Endpoints\RoutingAspNetCoreDemo.Endpoints.csproj", "{B5593107-D44D-4D41-8EE0-C68950B33F04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingAspNetCoreDemo.RazorPages", "RoutingAspNetCoreDemo.RazorPages\RoutingAspNetCoreDemo.RazorPages.csproj", "{1042B58F-CDAC-4F69-9AF1-C1AC2A51D3CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B5593107-D44D-4D41-8EE0-C68950B33F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5593107-D44D-4D41-8EE0-C68950B33F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5593107-D44D-4D41-8EE0-C68950B33F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1042B58F-CDAC-4F69-9AF1-C1AC2A51D3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1042B58F-CDAC-4F69-9AF1-C1AC2A51D3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1042B58F-CDAC-4F69-9AF1-C1AC2A51D3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1042B58F-CDAC-4F69-9AF1-C1AC2A51D3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
