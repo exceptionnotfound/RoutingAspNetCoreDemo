@@ -62,6 +62,10 @@ namespace RoutingAspNetCoreDemo.Conventional
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+                endpoints.MapAreaControllerRoute(name: "article",
+                                                 areaName: "blog",
+                                                 pattern: "blog/{controller=Post}/{action=Article}/{**title}");
+
                 //This method establishes a different "convention" route, one that only goes to the Account/Index action.
                 endpoints.MapControllerRoute("account", "account/{id?}",
                                                 defaults: new { controller = "Account", action = "Index" });

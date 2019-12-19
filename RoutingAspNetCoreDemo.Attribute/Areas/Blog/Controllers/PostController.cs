@@ -15,5 +15,11 @@ namespace RoutingAspNetCoreDemo.Conventional.Areas.Blog.Controllers
         {
             return View();
         }
+
+        [Route("article/{id}/{**title}")]
+        public IActionResult Article(int id)
+        {
+            return View();
+        }
     }
 }

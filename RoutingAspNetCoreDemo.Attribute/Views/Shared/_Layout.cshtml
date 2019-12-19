@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RoutingAspNetCoreDemo.Attribute</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Attribute Routing Demo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,21 +25,24 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="HttpGet">[HttpGet]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" 
-                               asp-controller="Home" 
-                               asp-action="Parameters" 
-                               asp-route-id="19" 
+                            <a class="nav-link text-dark"
+                               asp-controller="Home"
+                               asp-action="Parameters"
+                               asp-route-id="19"
                                asp-route-type="Test Name"
                                asp-route-level="5">Parameters</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="blog" asp-controller="Post" asp-action="Index">Area</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="NonExistant" asp-action="Index">Non-Existant</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index" asp-id="5">Ambiguous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="blog" asp-controller="Post" asp-action="Index">Area</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="blog" asp-controller="Post" asp-action="Article" asp-route-id="8" asp-route-title="this-is-a-test-article">Article</a>
                         </li>
                     </ul>
                 </div>

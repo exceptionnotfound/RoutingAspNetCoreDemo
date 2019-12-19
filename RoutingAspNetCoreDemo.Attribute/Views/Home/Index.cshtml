@@ -23,6 +23,17 @@
 </p>
 
 <p>
+    The "Non-Existant" link shows a difference between the current Endpoint Routing scheme and the prior (.NET Core 2.1 and earlier) scheme.
+    It attempts to create a link to a controller that does not exist; the resulting anchor tag will have a blank HREF.
+    In prior .NET Core versions, the link would be to the controller even if that controller did not exist.
+</p>
+
+<p>
+    The "Ambiguous" link demonstrates what happens when two actions have the same route;
+    the system throws an AmbiguousMatchException.
+</p>
+
+<p>
     The "Area" link demonstrates how to use Attribute Routing with Areas.
     You need to do two things: assign the [Area] attribute to the affected controllers,
     and separately define the routes used to reach those actions.  [RouteArea] and [RoutePrefix]
@@ -30,14 +41,8 @@
 </p>
 
 <p>
-    The "Non-Existant" link shows a difference between the current Endpoint Routing scheme and the prior (.NET Core 2.1 and earlier) scheme.
-    It attempts to create a link to a controller that does not exist; the resulting anchor tag will have a blank HREF.
-    In prior .NET Core versions, the link would be to the controller even if that controller did not exist.
-</p>
-
-<p>
-    Finally, the "Ambiguous" link demonstrates what happens when two actions have the same route;
-    the system throws an AmbiguousMatchException.
+    Finally, the "Article" link shows how to use pattern matching on attribute routes.  In this case, the format
+    is blog/post/article/{id}/{**title}, where {title} can be anything, due to the "match anything" identifier **.
 </p>
 
 <p>

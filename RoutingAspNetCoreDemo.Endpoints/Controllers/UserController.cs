@@ -4,17 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RoutingAspNetCoreDemo.Conventional.Areas.Blog.Controllers
+namespace RoutingAspNetCoreDemo.Endpoints.Controllers
 {
-    [Area("blog")]
-    public class PostController : Controller
+    public class UserController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Article()
         {
             return View();
         }
