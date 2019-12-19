@@ -3,6 +3,49 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome Dear Reader!</h1>
 </div>
+
+<p>
+    In this sample project, you will find some sample demos of how the Routing
+    system works in ASP.NET Core 3.0.
+</p>
+
+<p>
+    The links above demonstrate these methods.
+    But before you look at them, take a look at the Startup.cs file in this project.
+    In that file, you will see the routes defined in the call to UseEndpoints.
+</p>
+
+<p>For example, the "Home" link above demonstrates matching the "controller/action/id?" route pattern.</p>
+
+<p>
+    The "MapGet" link has it's route custom defined in Startup.cs, and redirects you to the User/Index action.'
+</p>
+
+<p>
+    The "UserDetails" link demonstrates two ideas: route constraints and pattern matching.
+    The format of the URL is /user/details/{id}/{**name}.  The {name} route value has the **
+    "match all" attribute applied, so anything at that location in the URL will be considered
+    to be the value of the "name" parameter.
+</p>
+
+<p>
+    Route Constraints are restrictions on what can and cannot be used in a route value.  The "User Details"
+    link has a route value of {id}, with a custom route constraint called RequiredIntRouteConstraint 
+    applied to it.  Further, the {name} route value mentioned earlier also has a RequiredRouteConstraint 
+    applied to it; this means that it can be literally anything (due to pattern matching) but cannot be missing.
+</p>
+
+<p>
+    The "User Missing Name" link uses the same route as the "User Details" link, but without a user name.
+    This means that the link will not redirect anywhere, since without the user name, no matching route was found.
+</p>
+
+<p>
+    Finally, the "LinkGenerator" link uses the injectable class LinkGenerator on its view.
+</p>
+
+<p>
+    Thanks for reading, and Happy Coding!
+</p>

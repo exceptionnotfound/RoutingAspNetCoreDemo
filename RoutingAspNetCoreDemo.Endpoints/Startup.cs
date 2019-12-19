@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RoutingAspNetCoreDemo.Endpoints.RouteConstraints;
 
 namespace RoutingAspNetCoreDemo.Endpoints
 {
@@ -52,6 +54,13 @@ namespace RoutingAspNetCoreDemo.Endpoints
                     context.Response.Redirect("/user/index");
                     await context.Response.CompleteAsync();
                 });
+
+                endpoints.MapControllerRoute(
+                    name: "userdetails",
+                    pattern: "user/{id}/{**name}",
+                    constraints: new { id = new RequiredIntRouteConstraint(),
+                                       name = new RequiredRouteConstraint() }
+                );
             });
         }
     }
