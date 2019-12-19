@@ -29,6 +29,11 @@
     are no longer used.
 </p>
 
+<p>
+    The "Non-Existant" link shows a difference between the current Endpoint Routing scheme and the prior (.NET Core 2.1 and earlier) scheme.
+    It attempts to create a link to a controller that does not exist; the resulting anchor tag will have a blank HREF.
+    In prior .NET Core versions, the link would be to the controller even if that controller did not exist.
+</p>
 
 <p>
     Finally, the "Ambiguous" link demonstrates what happens when two actions have the same route;

@@ -25,10 +25,21 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="HttpGet">[HttpGet]</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" 
+                               asp-controller="Home" 
+                               asp-action="Parameters" 
+                               asp-route-id="19" 
+                               asp-route-type="Test Name"
+                               asp-route-level="5">Parameters</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="blog" asp-controller="Post" asp-action="Index">Area</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Index" asp-id="5">Ambiguous</a>
+                            <a class="nav-link text-dark" asp-controller="NonExistant" asp-action="Index">Non-Existant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index" asp-id="5">Ambiguous</a>
                         </li>
                     </ul>
                 </div>

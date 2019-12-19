@@ -12,7 +12,7 @@ namespace RoutingAspNetCoreDemo.Attribute.Controllers
     {
         //The two actions in this class have the same route.
 
-        [Route("Index/{id}")]
+        [Route("Index")]
         public IActionResult Index(int id = 0)
         {
             AccountVM model = new AccountVM()
@@ -22,7 +22,7 @@ namespace RoutingAspNetCoreDemo.Attribute.Controllers
             return View("Index", model);
         }
 
-        [Route("Index/{id}")]
+        [Route("Index")]
         public IActionResult Index(string id = "0")
         {
             AccountVM model = new AccountVM()

@@ -69,6 +69,9 @@ namespace RoutingAspNetCoreDemo.Conventional
                 //This method established yet another "convention" route, for the User/Index action.
                 endpoints.MapControllerRoute("user", "user/{id?}",
                                              defaults: new { controller = "User", action = "Index" });
+
+                endpoints.MapControllerRoute("parameters", "parameters/{level}/{type}/{id}",
+                                             defaults: new { controller = "Home", action = "Parameters" });
             });
         }
     }

@@ -23,6 +23,18 @@ namespace RoutingAspNetCoreDemo.Conventional.Controllers
             return View();
         }
 
+        public IActionResult Parameters(int level, string type, int id)
+        {
+            ParametersVM model = new ParametersVM()
+            {
+                Level = level,
+                Type = type,
+                ID = id
+            };
+
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

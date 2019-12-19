@@ -19,28 +19,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <!--This anchor demonstrates how to use "standard" convention routing,
-                                e.g. one that matches controller/action/id? pattern defined in Startup.cs-->
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <!--This anchor will match the "account" convention route,
-                                passing in an ID of 5-->
-                            <a class="nav-link text-dark" asp-route="account" asp-route-id="5">Account</a>
+                            <a class="nav-link text-dark"
+                               asp-route="parameters"
+                               asp-route-id="19"
+                               asp-route-type="Test Name"
+                               asp-route-level="5">Parameters</a>
                         </li>
                         <li class="nav-item">
-                            <!--This anchor will match the "standard" convention route as well,
-                                passing in an ID of 89.-->
+                            <a class="nav-link text-dark" asp-route="account" asp-route-id="5">Account</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="User" asp-action="Index" asp-route-id="89">User (Mapped)</a>
                         </li>
                         <li class="nav-item">
-                            <!--This anchor will match the defined "User" route.-->
                             <a class="nav-link text-dark" asp-route="User" asp-route-id="89">User (Route)</a>
                         </li>
                         <li class="nav-item">
-                            <!--This anchor will attempt to redirect to one of the ambiguous actions
-                                in the Account controller. Because the Routing middleware cannot decide
-                                which route matches better, ASP.NET will throw an AmbiguousActionException-->
                             <a class="nav-link text-dark" asp-controller="account" asp-action="IndexAmbiguous" asp-route-id="77">Ambiguous</a>
                         </li>
                         <li class="nav-item">
