@@ -19,16 +19,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Blog" asp-page="/Post">Area</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Blog" asp-page="/Article" asp-route-id="98" asp-route-title="this-is-a-test-article">Article</a>
+                            <a class="nav-link text-dark" asp-area="Blog" asp-page="/Article" asp-route-id="98" asp-route-title="thisisatestarticle">Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Blog" asp-page="/Article" asp-route-id="88" asp-route-title="this-is-the-98th-article">Invalid Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Blog" asp-page="/DateArticle" asp-route-year="2019" asp-route-month="11" asp-route-day="28" asp-route-title="this-is-the-98th-article">Date Article</a>
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-﻿@page "/article/{id}/{**title}"
+﻿@page "/article/{id:int:required}/{**title:alpha}"
 @model RoutingAspNetCoreDemo.RazorPages.Areas.Blog.Pages.ArticleModel
 @{
 }

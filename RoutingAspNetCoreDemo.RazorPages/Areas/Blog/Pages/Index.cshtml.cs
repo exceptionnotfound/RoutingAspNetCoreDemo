@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RoutingAspNetCoreDemo.RazorPages.Areas.Blog.Pages
 {
-    public class PostModel : PageModel
+    public class BlogIndexModel : PageModel
     {
         public void OnGet()
         {

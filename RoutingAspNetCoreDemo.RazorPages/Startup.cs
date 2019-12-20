@@ -23,7 +23,11 @@ namespace RoutingAspNetCoreDemo.RazorPages
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages()
+                    .AddRazorPagesOptions(options =>
+                    {
+                        options.Conventions.AddAreaPageRoute("Blog", "/DateArticle", "Post/{year}/{month}/{day}/{title}");
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
