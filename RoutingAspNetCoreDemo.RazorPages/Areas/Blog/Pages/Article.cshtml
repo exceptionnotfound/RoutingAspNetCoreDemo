@@ -1,0 +1,8 @@
+﻿@page "/article/{id}/{**title}"
+@model RoutingAspNetCoreDemo.RazorPages.Areas.Blog.Pages.ArticleModel
+@{
+}
+
+<h2>Article Page</h2>
+
+<p>The ID is @RouteData.Values["id"] and the title is "@RouteData.Values["title"]"</p>
