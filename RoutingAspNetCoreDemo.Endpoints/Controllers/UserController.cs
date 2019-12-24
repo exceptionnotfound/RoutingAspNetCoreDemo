@@ -17,5 +17,11 @@ namespace RoutingAspNetCoreDemo.Endpoints.Controllers
         {
             return View();
         }
+
+        [HttpGet("[controller]/[action]")]
+        public IActionResult NamesAndHealthData()
+        {
+            return View();
+        }
     }
 }

@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RoutingAspNetCoreDemo.Endpoints.RouteConstraints;
+using RoutingAspNetCoreDemo.Endpoints.Transformers;
 
 namespace RoutingAspNetCoreDemo.Endpoints
 {
@@ -20,7 +22,10 @@ namespace RoutingAspNetCoreDemo.Endpoints
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(options =>
+            {
+                options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,10 +50,13 @@ namespace RoutingAspNetCoreDemo.Endpoints
 
             app.UseEndpoints(endpoints =>
             {
+                //An example of a basic route
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+                //An example of a route using MapGet.  This route will match any GET request
+                //to the /test/get location.
                 endpoints.MapGet("/test/get", async context => 
                 {
                     context.Response.Redirect("/user/index");
@@ -59,8 +67,8 @@ namespace RoutingAspNetCoreDemo.Endpoints
                     name: "userdetails",
                     pattern: "user/{id}/{**name}",
                     defaults: new {controller = "User", action = "Details"},
-                    constraints: new { id = new RequiredIntRouteConstraint(),
-                                       name = new RequiredRouteConstraint() }
+                    constraints: new { id = new RequiredPositiveIntRouteConstraint(),
+                                        name = new RequiredRouteConstraint() }
                 );
             });
         }

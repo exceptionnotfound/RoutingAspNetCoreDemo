@@ -9,12 +9,12 @@ namespace RoutingAspNetCoreDemo.Conventional.Areas.Blog.Controllers
     [Area("blog")]
     public class PostController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             return View();
         }
 
-        public IActionResult Article()
+        public IActionResult Article(string title)
         {
             return View();
         }

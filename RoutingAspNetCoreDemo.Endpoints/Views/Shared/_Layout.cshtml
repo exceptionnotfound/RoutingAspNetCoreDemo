@@ -25,10 +25,13 @@
                             <a class="nav-link text-dark" href="test/get">MapGet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-route="userdetails" asp-route-id="17" asp-route-name="Jack Jones">User Details</a>
+                            <a class="nav-link text-dark" asp-route="userdetails" asp-route-id="id" asp-route-name="Jack Jones">User Details</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-route="userdetails" asp-route-id="17">User Missing Name</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="User" asp-action="NamesAndHealthData">Parameter Transformer</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="LinkGenerator">Link Generator</a>
