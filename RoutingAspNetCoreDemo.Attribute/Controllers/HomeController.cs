@@ -33,6 +33,12 @@ namespace RoutingAspNetCoreDemo.Attribute.Controllers
             return View();
         }
 
+        [HttpPost("Home/HttpPost")]
+        public IActionResult HttpPost()
+        {
+            return RedirectToAction("HttpGet");
+        }
+
         [Route("Parameters/{level}/{type}/{id}")]
         public IActionResult Parameters(int level, string type, int id)
         {
